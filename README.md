@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Task Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A single-page task manager built with React. Add tasks with priority and optional due dates, mark them complete, edit or delete them, and browse dated tasks on a calendar. Data is stored in your browser with **localStorage** (key: `tasks`).
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Tasks** — Title, priority (high / medium / low), optional due date
+- **Lists** — Tasks without a due date in the main column; tasks with due dates feed the calendar column
+- **Actions** — Complete (checkbox), edit, delete
+- **Calendar** — `react-calendar` shows the selected day’s tasks and a summary of all dated tasks
+- **Persistence** — Tasks reload after refresh; dates are saved as ISO strings and restored as `Date` objects
 
-### `npm start`
+## Tech stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [React](https://react.dev/) 19
+- [Create React App](https://create-react-app.dev/) (`react-scripts`)
+- [MUI](https://mui.com/) (Material UI)
+- [react-datepicker](https://github.com/Hacker0x01/react-datepicker)
+- [react-calendar](https://github.com/wojtekmaj/react-calendar)
+- [React Router](https://reactrouter.com/) (app is wrapped in `BrowserRouter` for future routes)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+- [Node.js](https://nodejs.org/) (LTS recommended)
+- npm (comes with Node)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting started
 
-### `npm run build`
+Clone or download the project, then from the project root:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The dev server opens at [http://localhost:3000](http://localhost:3000) by default. If that port is busy, set another port:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+# Windows PowerShell
+$env:PORT="5174"; npm start
+```
 
-### `npm run eject`
+## Scripts
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Command        | Description                          |
+| -------------- | ------------------------------------ |
+| `npm start`    | Dev server with hot reload           |
+| `npm run build`| Production build in `build/`         |
+| `npm test`     | Jest test runner (interactive)       |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project layout
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+src/
+  App.js          — Main task UI, localStorage sync, layout
+  App.css         — App styles
+  CalendarPage.js — Calendar and dated-task views
+  index.js        — App entry
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Learn more
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Create React App documentation](https://create-react-app.dev/docs/getting-started)
+- [React documentation](https://react.dev/)
